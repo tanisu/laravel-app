@@ -18,13 +18,21 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: ****
-      MYSQL_USER: ****
-      MYSQL_PASSWORD: ****
-      MYSQL_ROOT_PASSWORD: ****
+      MYSQL_DATABASE: common
+      MYSQL_USER: tanisu
+      MYSQL_PASSWORD: naka69ni
+      MYSQL_ROOT_PASSWORD: naka69ni
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: ssssss
 volumes:
   mysql-data:
